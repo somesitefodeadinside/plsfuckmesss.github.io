@@ -1,0 +1,17 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+def index(request):
+    data = {
+        'title': 'Главная страница',
+        'values':['ello','ghost','finger of death'],
+        'obj': {
+            'car': 'BMW',
+            'age': 19,
+            'horny': 'ba be'
+        }
+    }
+    return render(request,'webexample/index.html',data)
+
+def about(request):
+    return render(request,'webexample/about.html')
